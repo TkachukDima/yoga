@@ -88,5 +88,41 @@ window.addEventListener('DOMContentLoaded', function() {
 
   setClock('timer', deadLine);
 
+  // Modal
+
+  let more = document.querySelector(".more"),
+      overlay = document.querySelector('.overlay'),
+      close = document.querySelector('.popup-close');
+
+  more.addEventListener('click', function() {
+    overlay.style.display = 'block';
+    this.classList.add('more-splash');
+    document.body.style.overflow = 'hidden';
+
+  });
+
+  close.addEventListener('click', function() {
+    overlay.style.display = 'none';
+    more.classList.remove('more-splash');
+    document.body.style.overflow = '';
+  });
+
+// Modal for Tabs
+
+  let allInfoBlock = document.querySelector('.info');
+  console.log(allInfoBlock);
+
+  allInfoBlock.addEventListener('click', function(event) {{
+      let target = event.target;
+      console.log(target);
+      console.log(target.classList);
+      if(target && target.classList.contains('description-btn')) {
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+  }});
+
+
+
 
 });
