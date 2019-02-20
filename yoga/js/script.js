@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', function() {
       info = document.querySelector('.info-header'),
       tabContent = document.querySelectorAll('.info-tabcontent');
 
-  function hideTabContent(a) {
+  function hideTabContent(a = 1) {
     for(let i = a; i < tabContent.length; i++) {
       tabContent[i].classList.remove('show');
       tabContent[i].classList.add('hide');
@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
   };
 
-  hideTabContent(1);
+  hideTabContent();
 
   function showTabContent(b) {
     if(tabContent[b].classList.contains('hide')) {
